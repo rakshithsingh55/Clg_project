@@ -1,0 +1,16 @@
+{% extends 'base_a.html' %}
+{% block content %}
+
+<center>
+<h2>View Dataset</h2>
+<br>
+<table id="tab">
+
+{% for d in data %}
+<tr><td><td>{{d.name}}<td><a href="{{d.url}}" target="_blank">{{d.url}}</a>
+{% endfor %}
+
+</table>
+
+
+{% endblock %}

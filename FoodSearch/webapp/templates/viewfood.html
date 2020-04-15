@@ -1,0 +1,28 @@
+{% extends 'base_s.html' %}
+{% block content %}
+
+<center>
+
+<table id="tab">
+{% for d in data %}
+<tr><th colspan="2"><h3><center>{{d.name}}
+
+<tr><th>URL<td><a href="{{d.url}}" target="_blank">{{d.url}}</a><br><br><br>
+<tr><th>Description<td>{{d.description}}<br><br>
+<tr><th>Ingredients<td>{{d.ingredients}}
+
+</table>
+
+<form action="/recommendationas" method="post">
+					{% csrf_token %} 
+						<input type="hidden" name="name" value="{{d.name}}">
+						<input type="hidden" name="ing" value="{{d.ingredients}}">
+						
+
+													<div class="snipcart-details top_brand_home_details">
+														<input type="submit" name="submit" value="Recommendationas" class="button">
+
+												</form>
+
+{% endfor %}
+{% endblock %}

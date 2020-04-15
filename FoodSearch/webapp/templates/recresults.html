@@ -1,0 +1,15 @@
+{% extends 'base_s.html' %}
+{% block content %}
+
+<center>
+<h2>Recommendation Results</h2>
+<br>
+<table id="tab">
+<tr><td><h3>Name<td><h3>URL<td><h3>
+{% for d in data %}
+<tr><td>{{d.name}}<td>{{d.url}}<td><a href="{% url 'viewfood2' name=d.name %}">View</a>
+{% endfor %}
+</table>
+
+
+{% endblock %}

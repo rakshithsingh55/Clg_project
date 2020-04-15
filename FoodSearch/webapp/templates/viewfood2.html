@@ -1,0 +1,17 @@
+{% extends 'base_s.html' %}
+{% block content %}
+
+<center>
+
+<table id="tab">
+{% for d in data %}
+<tr><th colspan="2"><h3><center>{{d.name}}
+
+<tr><th>URL<td><a href="{{d.url}}" target="_blank">{{d.url}}</a><br><br><br>
+<tr><th>Description<td>{{d.description}}<br><br>
+<tr><th>Ingredients<td>{{d.ingredients}}
+{% endfor %}
+</table>
+
+
+{% endblock %}
